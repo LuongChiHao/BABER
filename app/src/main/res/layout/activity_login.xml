@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Activities.Login">
+
+    <TextView
+        android:textSize="50dp"
+        android:id="@+id/tv_log"
+        android:textColor="#bd9377"
+        android:text="LOGIN"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="casual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_below="@id/tv_log"
+        android:id="@+id/iv_login"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="40dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tpl_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:layout_below="@id/iv_login"
+        app:startIconContentDescription="Hello"
+        app:startIconDrawable="@drawable/ic_baseline_edit_24"
+        app:endIconMode="clear_text"
+        android:hint="Email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_email"
+            android:background="@drawable/input_style"
+            android:inputType="textEmailAddress"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tpl_mk"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_below="@id/tpl_email"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_baseline_edit_24"
+        app:endIconMode="password_toggle"
+        android:hint="Mật khẩu">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/edt_mk"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:background="@drawable/input_style"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.github.whilu.library.CustomButton
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập"
+        android:textColor="@color/white"
+        app:shape_type="rectangle"
+        app:round_radius="10dp"
+        app:pressed_color="@color/black"
+        android:layout_below="@id/tpl_mk"
+        android:layout_margin="30dp"
+        android:layout_centerHorizontal="true"
+        app:unpressed_color="#FF6D00" />
+
+    <TextView
+        android:id="@+id/tv_dk"
+        android:textColor="@color/white"
+        android:text="Chưa có tài khoản?"
+        android:layout_margin="30dp"
+        android:textAlignment="center"
+        android:clickable="true"
+
+        android:layout_below="@id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

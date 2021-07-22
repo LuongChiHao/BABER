@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.HomeNav_Fragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout_homenav"
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        app:tabSelectedTextColor="@color/cam"
+        app:tabIconTint="@color/custom_color_bottom_nav"
+        app:tabTextColor="@color/custom_color_bottom_nav"
+        android:layout_height="wrap_content"/>
+
+    <com.example.create_app.Other.CustomViewPager
+        android:id="@+id/pager_homenav"
+        android:layout_width="match_parent"
+        android:layout_below="@id/tablayout_homenav"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
