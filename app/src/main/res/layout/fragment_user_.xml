@@ -10,43 +10,59 @@
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:src="@drawable/user"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="120dp"
         android:layout_width="150dp"
         app:riv_corner_radius="100dp"
         android:id="@+id/iv_user_avatar"
         android:layout_height="150dp"/>
 
     <TextView
+
         android:id="@+id/tv_user_name"
         android:text="USER"
         android:textColor="@color/cam"
         android:textSize="25sp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="70dp"
         android:layout_width="wrap_content"
         android:textStyle="bold"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:drawableLeft="@drawable/user"
+        android:drawableLeft="@drawable/userid"
         android:id="@+id/tv_user_userID"
         android:text="Tên đăng nhập: user123"
         android:textSize="20sp"
         android:textColor="@color/white"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:layout_marginHorizontal="30dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:drawableLeft="@drawable/user"
+        android:layout_marginTop="30dp"
+        android:drawableLeft="@drawable/ic_baseline_local_phone_24"
         android:id="@+id/tv_user_phone"
         android:text="Số điện thoại: 0909333222"
         android:textSize="20sp"
         android:textColor="@color/white"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:layout_marginHorizontal="30dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <com.github.whilu.library.CustomButton
+        android:id="@+id/btn_changeuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chỉnh sửa thông tin"
+        android:textColor="@color/white"
+        app:shape_type="rectangle"
+        app:round_radius="10dp"
+        app:pressed_color="@color/black"
+        android:layout_below="@id/tpl_mk"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="30dp"
+        app:unpressed_color="#FF6D00" />
 
 </LinearLayout>
