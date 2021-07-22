@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android:gravity="center_horizontal"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.User_Fragment">
+    tools:context=".Fragment.User_Fragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:src="@drawable/user"
+        android:layout_marginTop="30dp"
+        android:layout_width="150dp"
+        app:riv_corner_radius="100dp"
+        android:id="@+id/iv_user_avatar"
+        android:layout_height="150dp"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_user_name"
+        android:text="USER"
+        android:textColor="@color/cam"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"/>
 
-</FrameLayout>
+    <TextView
+        android:drawableLeft="@drawable/user"
+        android:id="@+id/tv_user_userID"
+        android:text="Tên đăng nhập: user123"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:drawableLeft="@drawable/user"
+        android:id="@+id/tv_user_phone"
+        android:text="Số điện thoại: 0909333222"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
