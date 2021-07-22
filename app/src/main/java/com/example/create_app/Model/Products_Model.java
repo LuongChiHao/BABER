@@ -2,6 +2,7 @@ package com.example.create_app.Model;
 
 public class Products_Model {
 	int id, price;
+	String name, img, des;
 
 	public Products_Model() {
 	}
@@ -54,7 +55,6 @@ public class Products_Model {
 		this.des = des;
 	}
 
-	String name, img, des;
 
 
 

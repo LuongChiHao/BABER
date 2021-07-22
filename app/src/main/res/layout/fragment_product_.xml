@@ -5,10 +5,23 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.Product_Fragment">
 
-    <TextView
-        android:layout_centerInParent="true"
-        android:text="Sản phẩm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edtsearch_sanpham"
+        android:background="@drawable/input_style"
+        android:layout_marginVertical="20dp"
+        android:textSize="18sp"
+        android:layout_marginHorizontal="15dp"
+        android:text="Tìm sản phẩm..."
+        android:paddingHorizontal="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/edtsearch_sanpham"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rcv_sanpham"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

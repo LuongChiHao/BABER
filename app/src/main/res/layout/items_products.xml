@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_products"
+        app:cardCornerRadius="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+              <com.makeramen.roundedimageview.RoundedImageView
+                  android:id="@+id/iv_products"
+                  android:layout_width="100dp"
+                  android:layout_alignParentTop="true"
+                  android:scaleType="centerCrop"
+                  android:layout_alignParentLeft="true"
+                  app:riv_corner_radius="100dp"
+                  android:src="@drawable/logo"
+                  android:layout_height="100dp"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_product_name"
+                    android:layout_toRightOf="@id/iv_products"
+                    android:text="Wax vuốt tóc"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_product_price"
+                    android:layout_toRightOf="@id/iv_products"
+                    android:layout_below="@id/tv_product_name"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:text="Giá tiền: 2,000,000 VND"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
