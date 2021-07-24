@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Create_App">
+        <activity android:name=".Details.Product_Details"></activity>
         <activity
             android:name=".Navigate_Activities"
             android:label="@string/title_activity_navigate__activities"

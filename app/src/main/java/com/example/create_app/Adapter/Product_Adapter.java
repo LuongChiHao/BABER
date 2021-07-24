@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.create_app.Model.Products_Model;
+import com.example.create_app.Other.ItemClickListener;
 import com.example.create_app.R;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
@@ -48,6 +50,16 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.viewHo
 					.error(R.drawable.ic_baseline_error_24)
 					.placeholder(R.drawable.ic_baseline_image_24)
 					.into(holder.iv);
+			holder.setItemClickListener(new ItemClickListener(){
+
+				@Override
+				public void onClick(View view, int position, boolean isLongClick) {
+					if (!isLongClick)
+					{
+						Toast.makeText(context, "Clicked: "+position, Toast.LENGTH_SHORT).show();
+					}
+				}
+			});
 		} catch (Exception e) {
 			Log.d("Lỗi adapter", e.toString());
 		}
@@ -59,14 +71,26 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.viewHo
 		return list.size();
 	}
 
-	public class viewHolder extends RecyclerView.ViewHolder{
+	public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 		public RoundedImageView iv;
 		public TextView tv_price, tv_name;
+		private ItemClickListener itemClickListener;
 		public viewHolder(@NonNull View itemView) {
 			super(itemView);
 			iv = itemView.findViewById(R.id.iv_products);
 			tv_price = itemView.findViewById(R.id.tv_product_price);
 			tv_name = itemView.findViewById(R.id.tv_product_name);
+			itemView.setOnClickListener(this);
+		}
+
+		public void setItemClickListener(ItemClickListener itemClickListener)
+		{
+			this.itemClickListener = itemClickListener;
+		}
+
+		@Override
+		public void onClick(View v) {
+			itemClickListener.onClick(v, getAdapterPosition(), false);
 		}
 	}
 }

@@ -61,7 +61,21 @@
         app:round_radius="10dp"
         app:pressed_color="@color/black"
         android:layout_below="@id/tpl_mk"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="90dp"
+        app:unpressed_color="#FF6D00" />
+
+    <com.github.whilu.library.CustomButton
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng xuất"
+        android:textColor="@color/white"
+        app:shape_type="rectangle"
+        app:round_radius="20dp"
+        app:pressed_color="@color/black"
+        android:layout_below="@id/tpl_mk"
+        android:layout_marginTop="50dp"
         android:layout_marginHorizontal="30dp"
         app:unpressed_color="#FF6D00" />
 

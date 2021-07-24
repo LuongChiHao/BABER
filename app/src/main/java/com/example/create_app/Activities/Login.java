@@ -37,6 +37,7 @@ public class Login extends AppCompatActivity {
 			public void onClick(View v) {
 				Intent i = new Intent(getApplicationContext(), MainActivity.class);
 				startActivity(i);
+				finish();
 			}
 		});
 //		End Button
