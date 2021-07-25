@@ -1,7 +1,7 @@
 package com.example.create_app.Adapter;
 
 import android.content.Context;
-import android.util.Log;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.create_app.Details.Product_Details;
 import com.example.create_app.Model.Hairs_Model;
+import com.example.create_app.Other.ItemClickListener;
 import com.example.create_app.R;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
@@ -43,7 +45,22 @@ public class Hair_Adapter extends RecyclerView.Adapter<Hair_Adapter.ItemHolder>{
 				.error(R.drawable.ic_baseline_error_24)
 				.placeholder(R.drawable.ic_baseline_image_24)
 				.into(holder.iv);
-		Log.d(">>>>>>>>>>>>", model.getImg()+list.size());
+		holder.setItemClickListener(new ItemClickListener(){
+
+			@Override
+			public void onClick(View view, int position, boolean isLongClick) {
+				if (!isLongClick)
+				{
+
+					Intent i = new Intent(context, Product_Details.class);
+					i.putExtra("id", model.getId());
+					i.putExtra("name", model.getName());
+					i.putExtra("img", model.getImg());
+					i.putExtra("des", model.getDes());
+					context.startActivity(i);
+				}
+			}
+		});
 	}
 
 	@Override
@@ -51,14 +68,26 @@ public class Hair_Adapter extends RecyclerView.Adapter<Hair_Adapter.ItemHolder>{
 		return list.size();
 	}
 
-	public class ItemHolder extends RecyclerView.ViewHolder{
+	public class ItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 		public RoundedImageView iv;
 		public TextView tv;
+		private ItemClickListener itemClickListener;
 
 		public ItemHolder(@NonNull View itemView) {
 			super(itemView);
 			iv = itemView.findViewById(R.id.iv_hairs);
 			tv = itemView.findViewById(R.id.tv_hairsname);
+			itemView.setOnClickListener(this);
+		}
+
+		public void setItemClickListener(ItemClickListener itemClickListener)
+		{
+			this.itemClickListener = itemClickListener;
+		}
+
+		@Override
+		public void onClick(View v) {
+			itemClickListener.onClick(v, getAdapterPosition(), false);
 		}
 	}
 }

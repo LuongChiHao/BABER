@@ -14,4 +14,6 @@
     <color name="black_overlay">#66000000</color>
     <color name="background">#3e1a15</color>
     <color name="cam">#bd9377</color>
+    <color name="camnhat">#FF6D00</color>
+
 </resources>

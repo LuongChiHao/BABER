@@ -1,9 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:background="@color/background"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Details.Product_Details">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:background="#FF6D00"
+        android:orientation="vertical"
+        android:id="@+id/linear_products_details"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_name_header_products_details"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="User"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@id/linear_products_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <ImageView
+               android:layout_marginTop="20dp"
+               android:layout_alignParentLeft="true"
+               android:id="@+id/iv_products_details"
+               android:src="@drawable/logo"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+           <TextView
+               android:text="USER"
+               android:textAlignment="center"
+               android:layout_below="@id/iv_products_details"
+               android:id="@+id/tv_name_products_details"
+               android:textColor="@color/cam"
+               android:textStyle="bold"
+               android:textSize="25sp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+           <TextView
+               android:layout_marginTop="20dp"
+               android:id="@+id/tv_des_products_details"
+               android:text="Mô tả: là cái gì đó ghê lắm á hhihihihihihihihihihhi
+hihihihihihihihiihhihihh"
+               android:layout_marginHorizontal="20dp"
+               android:textColor="@color/cam"
+               android:textSize="18sp"
+               android:layout_width="match_parent"
+               android:textStyle="italic"
+               android:layout_height="wrap_content"/>
+       </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:background="#FF6D00"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="Price: 1000000 VND"
+            android:id="@+id/tv_price_products_details"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"/>
+
+
+
+        <com.github.whilu.library.CustomButton
+            android:id="@+id/btn_add_cart_products_details"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="Thêm vào giỏ hàng"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:shape_type="rectangle"
+            app:round_radius="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="20dp"
+            app:unpressed_color="#FF6D00" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

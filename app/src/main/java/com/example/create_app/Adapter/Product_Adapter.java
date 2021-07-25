@@ -1,17 +1,18 @@
 package com.example.create_app.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.icu.text.DecimalFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.create_app.Details.Product_Details;
 import com.example.create_app.Model.Products_Model;
 import com.example.create_app.Other.ItemClickListener;
 import com.example.create_app.R;
@@ -56,7 +57,14 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.viewHo
 				public void onClick(View view, int position, boolean isLongClick) {
 					if (!isLongClick)
 					{
-						Toast.makeText(context, "Clicked: "+position, Toast.LENGTH_SHORT).show();
+
+						Intent i = new Intent(context, Product_Details.class);
+						i.putExtra("id", model.getId());
+						i.putExtra("name", model.getName());
+						i.putExtra("price", model.getPrice());
+						i.putExtra("img", model.getImg());
+						i.putExtra("des", model.getDes());
+						context.startActivity(i);
 					}
 				}
 			});
